@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class CabeceraPagina {
+private:
+    string titulo;
+
+public:
+    void setTitulo(string t) {
+        titulo = t;
+    }
+
+    void mostrar(string posicion) {
+        cout << "<h1 style='text-align:" << posicion << ";'>"
+             << titulo << "</h1>" << endl;
+    }
+};
+
+int main() {
+    CabeceraPagina cabecera;
+
+    cabecera.setTitulo("Mi página web");
+
+    cabecera.mostrar("center");
+
+    return 0;
+}
