@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class Tabla {
+private:
+    int filas;
+    int columnas;
+    string datos[10][10];
+
+public:
+    Tabla(int f, int c) {
+        filas = f;
+        columnas = c;
+    }
+
+    void cargarDato(int fila, int columna, string dato) {
+        datos[fila][columna] = dato;
+    }
+
+    void mostrar() {
+        cout << "<table border='1'>" << endl;
+
+        for (int i = 0; i < filas; i++) {
+            cout << "<tr>";
+
+            for (int j = 0; j < columnas; j++) {
+                cout << "<td>" << datos[i][j] << "</td>";
+            }
+
+            cout << "</tr>" << endl;
+        }
+
+        cout << "</table>" << endl;
+    }
+};
+
+int main() {
+    Tabla tabla(2, 3);
+
+    tabla.cargarDato(0, 0, "Nombre");
+    tabla.cargarDato(0, 1, "Edad");
+    tabla.cargarDato(0, 2, "Curso");
+
+    tabla.cargarDato(1, 0, "Juan");
+    tabla.cargarDato(1, 1, "17");
+    tabla.cargarDato(1, 2, "5°4°");
+
+    tabla.mostrar();
+
+    return 0;
+}
