@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class CabeceraPagina {
+private:
+    string titulo;
+    string posicion;
+    string colorFondo;
+    string colorFuente;
+
+public:
+    CabeceraPagina(string t, string p, string fondo, string fuente) {
+        titulo = t;
+        posicion = p;
+        colorFondo = fondo;
+        colorFuente = fuente;
+    }
+
+    void mostrar() {
+        cout << "<h1 style='text-align:" << posicion
+             << "; background-color:" << colorFondo
+             << "; color:" << colorFuente << ";'>"
+             << titulo << "</h1>" << endl;
+    }
+};
+
+int main() {
+    CabeceraPagina cabecera(
+        "Mi página",
+        "center",
+        "black",
+        "white"
+    );
+
+    cabecera.mostrar();
+
+    return 0;
+}
