@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class Empleado {
+private:
+    string nombre;
+    float sueldo;
+
+public:
+    void inicializar(string n, float s) {
+        nombre = n;
+        sueldo = s;
+    }
+
+    void mostrar() {
+        cout << "Nombre: " << nombre << endl;
+
+        if (sueldo > 800000)
+            cout << "Debe pagar impuestos." << endl;
+        else
+            cout << "No debe pagar impuestos." << endl;
+    }
+};
+
+int main() {
+    Empleado empleado;
+
+    empleado.inicializar("Juan", 900000);
+    empleado.mostrar();
+
+    return 0;
+}
